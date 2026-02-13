@@ -6,6 +6,18 @@ export interface TrendingTopicsRequest {
 }
 
 /**
+ * Topic shape stored in session and used by interview pages
+ */
+export interface TrendingTopic {
+  rank: number;
+  topic_title: string;
+  global_context: string;
+  why_this_matters: string;
+  key_questions: string[];
+  source_tweet_id?: string;
+}
+
+/**
  * Deep research result from Perplexity
  */
 export interface ResearchResult {
