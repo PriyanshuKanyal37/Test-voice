@@ -169,7 +169,16 @@ def assemble_deepgram_config(state: AgentState) -> AgentState:
                 "prompt": state["system_prompt"],
             },
             "speak": {
-                "provider": {"type": "deepgram", "model": "aura-2-thalia-en"},
+                "provider": {
+                    "type": "eleven_labs",
+                    "model_id": "eleven_turbo_v2_5",
+                },
+                "endpoint": {
+                    "url": "https://api.elevenlabs.io/v1/text-to-speech/ljX1ZrXuDIIRVcmiVSyR",
+                    "headers": {
+                        "xi-api-key": os.getenv("ELEVENLABS_API_KEY"),
+                    },
+                },
             },
         },
     }
